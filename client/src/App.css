@@ -1,0 +1,192 @@
+.App {
+  margin:0;
+  height:100%;
+}
+
+.area{
+  width:500px;
+  padding:75px;
+  position:fixed;
+  top:35%;
+  left:32%;
+
+}
+
+area1{
+  margin-top:50px;
+}
+
+.area1 input{
+  background-color:#333;
+  border:none;
+  border-bottom:1px solid white;
+}
+
+.area1 input:focus{
+  background-color:#333;
+  border:none;
+}
+
+.area1 input::placeholder{
+  color:#3399ff;
+}
+
+.container1{
+  background-color:#333;
+   height:100vh;
+   overflow:auto;
+}
+
+.container1 label{
+  color:#3399ff;
+}
+
+.LogHead{
+  text-align:center;
+  margin-top:80px;
+  font-size:60px;
+  color:#3399ff;
+}
+
+html, 
+body {
+    height: 100%;
+}
+
+#root{
+   min-height: 100vh;
+}
+
+.username{
+  visibility:hidden;
+}
+
+.password{
+  visibility:hidden;
+}
+
+.error{
+  text-align:center;
+  color:#3399ff;
+}
+
+.chatlist{
+  border-right:groove;
+  border-width: 1px;
+  border-color:white;
+  height:90vh;
+}
+
+.navUser{
+  color:darkturquoise;
+  font-size:150%;
+}
+
+.contact{
+  color:cornflowerblue;
+  font-size:125%;
+  border-bottom:groove;
+  margin-top:10px;
+  padding:10px;
+  border-width:1px;
+  margin-left:5px;
+}
+
+.message{
+  margin-left:40vh;
+  text-align:center;
+  margin-top:10vh;
+  color:cornflowerblue;
+  font-size:20px;
+}
+
+.rocket{
+  padding:25px;
+}
+
+.true{
+  padding:10px;
+  text-align:right;
+  color:white;
+  
+} 
+
+.false{
+  padding:10px;
+  text-align:left;
+  color:white;
+}
+
+.border1{
+  border:1px;
+  border-style:none;
+  padding:4px 30px 4px 30px;
+  border-radius:5px;
+  background-color:dodgerblue;
+}
+
+.border2{
+  border:1px;
+  border-style:none;
+  padding:4px 30px 4px 30px;
+  border-radius:5px;
+  background-color:white;
+  color:dodgerblue;
+}
+
+.typeSpace{
+  border-radius:10px;
+  border-style:none;
+  width:70%;
+  padding:5px;
+}
+
+.pageBottom{
+  position:fixed;
+  bottom:20px;
+  width:100%;
+}
+
+.chats{
+  overflow:auto;
+  height:82vh;
+}
+
+#navbar1{
+  position:fixed;
+}
+
+.sendButton:hover{
+  cursor:pointer;
+}
+
+.modal-custom-style{
+	width:90%;
+}
+
+.modal-dialog{
+	max-width:none;
+}
+
+.fontColor{
+	color:#3399ff;
+}
+
+.zoom {
+  padding: 50px;
+  transition: transform .2s;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+}
+
+.home{
+	margin-left:60px;
+	margin-right:50px;
+}

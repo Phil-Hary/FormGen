@@ -1,0 +1,186 @@
+Insert
+
+	db.forms.insert( 
+	{ 
+		formName: "IPL Survey",
+		desc:"IPL players survey",
+		type:"form", 
+		formData:[{
+			questionNo:1,
+			question:"Which team you play for?",
+			inputType:"text",
+			placeholder:"Name"
+		},
+		{
+			questionNo:2,
+			question:"Where are you from?",
+			inputType:"text",
+			placeholder:"Hometown"
+		},
+		{
+			questionNo:3,
+			question:"Role in Team?",
+			inputType:"text",
+			placeholder:"Team"
+		}], 
+		resCount:4, 
+		responses:[
+		{
+			userName:"Dhoni",
+			emailId:"ms@gmail.com",
+			answers:[
+			{
+				questionNo:1,
+				question:"Which team you play for?",
+				answer:"CSK"
+			},
+			{
+				questionNo:2,
+				question:"Where are you from?",
+				answer:"Ranchi"
+			},
+			{
+				questionNo:3,
+				question:"Role in Team?",
+				answer:"Captin, Bastmen, WicketKeeper"
+			}]
+		},
+		{
+			"userName" : "Kohli",
+			"emailId" : "virat@gmail.com",
+			"answers" : [
+					{
+							"questionNo" : 1,
+							"question" : "Which team you play for?",
+							"answer" : "RCB"
+					},
+					{
+							"questionNo" : 2,
+							"question" : "Where are you from?",
+							"answer" : "Delhi"
+					},
+					{
+						questionNo:3,
+						question:"Role in Team?",
+						answer:"Captin, Bastmen"
+					}
+			]
+        },
+		{
+			userName:"Jadeja",
+			emailId:"jd@gmail.com",
+			answers:[
+			{
+				questionNo:1,
+				question:"Which team you play for?",
+				answer:"CSK"
+			},
+			{
+				questionNo:2,
+				question:"Where are you from?",
+				answer:"Gujarat"
+			},
+			{
+				questionNo:3,
+				question:"Role in Team?",
+				answer:"All-rounder"
+			}]
+		},
+		{
+			userName:"Shami",
+			emailId:"sham@gmail.com",
+			answers:[
+			{
+				questionNo:1,
+				question:"Which team you play for?",
+				answer:"DC"
+			},
+			{
+				questionNo:2,
+				question:"Where are you from?",
+				answer:"Delhi"
+			},
+			{
+				questionNo:3,
+				question:"Role in Team?",
+				answer:"Pace Bowler"
+			}]
+		}] 
+	})
+	
+	db.forms.insert( 
+	{ 
+		formName: "Survey2", 
+		type:"form", 
+		formData:[{
+			questionNo:1,
+			question:"Enter Name",
+			inputType:"text",
+			placeholder:"Enter Name"
+		},
+		{
+			questionNo:2,
+			question:"Enter emailId",
+			inputType:"email",
+			placeholder:"Enter Email",
+			emailId:"Enter EmailId"
+		}], 
+		resCount:0, 
+		responses:[] } )
+
+Delete
+
+   db.forms.deleteMany( { "type" : "form" } );
+
+Update
+	db.forms.update(
+	   { formName: "Survey1" },
+	   {
+		 $push: { responses: 
+			 {
+                        "userName" : "Kohli",
+                        "emailId" : "virat@gmail.com",
+                        "answers" : [
+                                {
+                                        "questionNo" : 1,
+                                        "question" : "Which team you play for?",
+                                        "answer" : "RCB"
+                                },
+                                {
+                                        "questionNo" : 2,
+                                        "question" : "Where are you from?",
+                                        "answer" : "Delhi"
+                                }
+                        ]
+                }
+		  }
+	   }
+	)
+	
+Form
+	db.forms.update(
+		{ formName: "Survey1" },
+		   {
+			 $push: { formData: 
+				 {
+							"questionNo" : "questionNo",
+							"inputType" : "inputType",
+							"question" : "question",
+							"placeholder" : "placeholder",
+							"option1":"option1",
+							"option2":"option2",
+							"option3":"option3"
+					}
+			  }
+		   }
+	)
+
+Get
+
+db.forms.aggregate([
+                     { $match: { type: "form" } },
+                     { $group: { _id: "$formName"} }
+                   ])
+				   
+{(this.state.modal === true)?(<ViewModal toggle={this.toggle} modal={this.state.modal} formDetails={this.state.formData} currentForm={this.state.currentForm}/>):(<ViewModal toggle={this.toggle} modal={this.state.modal} formDetails={this.state.formData} currentForm={this.state.currentForm}/>)}
+						  				   
