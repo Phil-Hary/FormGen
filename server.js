@@ -8,7 +8,7 @@ const path = require('path');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
-app.use('/admin/',adminRouter);
+
 
 if(process.env.NODE_ENV === "production"){
 	//Set static folder
@@ -18,6 +18,8 @@ if(process.env.NODE_ENV === "production"){
 		res.sendFile(path.resolve(__dirname,'client','build','index.html'));
 	});
 }
+
+app.use('/admin/',adminRouter);
 
 const port = process.env.PORT || 5000;
 
