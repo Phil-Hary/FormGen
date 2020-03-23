@@ -51,6 +51,9 @@ const createNewForm = (formName,formDesc) => {
 				//console.log(data)
 				resolve(data);
 			})
+			.catch((data)=>{
+				reject(data);
+			})
 		});
 }
 

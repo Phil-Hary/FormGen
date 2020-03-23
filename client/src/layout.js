@@ -46,7 +46,7 @@ class Layout extends React.Component{
 				  </button>
 				  <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<div className="navbar-nav">
-					  <Link className="nav-item nav-link active" to="/dashboard">DashBoard <span className="sr-only">(current)</span></Link>
+					  <Link className="nav-item nav-link" to="/dashboard">DashBoard</Link>
 					  <Link className="nav-item nav-link" to="/createForm">Create Form</Link>
 					  <Link className="nav-item nav-link" to="/editForm">Edit Form</Link>
 					  <Link to="/user/:formName"/>
