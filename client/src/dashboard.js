@@ -87,7 +87,7 @@ class Dashboard extends React.Component{
 	
 	componentDidMount(){
 		axios
-			.get('http://localhost:5000/admin/dashboard')
+			.get('/admin/dashboard')
 			.then((res)=>{
 				console.log(res.data);
 				this.setState({
