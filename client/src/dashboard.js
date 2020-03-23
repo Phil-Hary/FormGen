@@ -8,6 +8,16 @@ import ViewModal from './viewModal';
 import LinkGenModal from './linkGenModal';
 import App from './App';
 
+/*
+DESCRIPTION
+
+component: Dashboard
+
+Desc:
+	This is componets is the main component which diplays the admin dashboard page
+
+*/
+
 class Dashboard extends React.Component{
 	
 	constructor(props){
@@ -21,9 +31,9 @@ class Dashboard extends React.Component{
 		
 	}
 	
+	//Function to toggle viewModal
 	toggle = (e) => {
-		console.log("Hello");
-		console.log(e.target.name);
+
 		if(this.state.modal === true)
 		{
 			this.setState({
@@ -39,6 +49,7 @@ class Dashboard extends React.Component{
 		}
 	}
 	
+	//function to toggle linkGenModal
 	linkGenToggle = (e) => {
 		if(this.state.linkModal === true)
 		{
@@ -55,7 +66,7 @@ class Dashboard extends React.Component{
 		}
 	}
 	
-		
+	//Builds the form Layout
 	formLayout =() => {
 		const formStruct=[];
 		const data = this.state.formData;
@@ -89,7 +100,7 @@ class Dashboard extends React.Component{
 		axios
 			.get('/admin/dashboard')
 			.then((res)=>{
-				console.log(res.data);
+				
 				this.setState({
 					formData:res.data}
 				);
@@ -107,8 +118,8 @@ class Dashboard extends React.Component{
 			
 			(this.state.formData == "No forms available")?(<p>{this.state.formData}</p>):(
 				
-				<div>
-					<p> Forms </p>
+				<div className='container1'>
+					<h3 className="fontWhite" align="center"> Forms </h3>
 					{this.formLayout()}
 				</div>
 			)

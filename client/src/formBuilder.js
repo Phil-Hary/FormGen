@@ -3,6 +3,16 @@ import axios from 'axios';
 import AddModal from './addModal';
 import EditModal from './editComponentModal';
 
+/*
+DESCRIPTION
+
+component: FormBuilder
+
+Desc:
+	This component builds the form
+
+*/
+
 class FormBuilder extends React.Component{
 	constructor(props){
 		super(props);
@@ -26,7 +36,7 @@ class FormBuilder extends React.Component{
 	}
 	
 	toggle = (e) => {
-		console.log("Hello");
+
 		if(this.state.modal === true)
 		{
 			this.setState({
@@ -41,9 +51,7 @@ class FormBuilder extends React.Component{
 	}
 	
 	editToggle = (e) => {
-		console.log("Here "+e.target.name);
-		console.log("Here1 "+e.target.getAttribute('data-placeholder'));
-		console.log("Here1 "+e.target.getAttribute('data-question'));
+
 		
 		let editState = {
 				questionNo:"",
@@ -83,7 +91,7 @@ class FormBuilder extends React.Component{
 	}
 	
 	getCurrentComponentDetails=()=>{
-		console.log(this.state);
+
 		return this.state.editState;
 	}
 /*	
@@ -107,7 +115,7 @@ class FormBuilder extends React.Component{
 			  })
 			 .then((data)=>{
 				 data.data.map(forms => {
-					 console.log(forms)
+
 					  this.setState({
 						formDetails : forms.formData
 					 })
@@ -123,6 +131,7 @@ class FormBuilder extends React.Component{
 	
 	componentDidMount(){
 		console.log(this.props.formName);
+		//Inserts emailId and Username to identify user
 		if(this.props.formDesc != null){
 			axios
 			.post('http://localhost:5000/admin/createNewForm', {
@@ -153,39 +162,7 @@ class FormBuilder extends React.Component{
 					case "textArea":
 						console.log("Inserting1");
 						components.push(
-							<div class="card text-white bg-secondary mb-3">
-								<div class="card-header">{"Question No "+ component.questionNo}</div>
-								  <div class="card-body">
-									<form>
-									  <div class="form-group">
-										<label for="inputType">Input Type</label>
-										<input type="text" className="form-control col-lg-6" id="inputType" value={component.inputType}/>
-									  </div>
-									  <div class="form-group">
-										<label for="placeholder">Plaeholder</label>
-										<input type="text" class="form-control col-lg-6" id="placeholder" value={component.placeholder}/>
-									  </div>
-									  <div class="form-group">
-										<label for="question">Question</label>
-										<input type="text" class="form-control col-lg-6" id="question" value={component.question}/>
-									  </div>
-									 </form>
-									<button type="button" class="btn btn-outline-dark col-lg-2 offset-lg-1" onClick={this.editToggle} name="edit"
-									data-no={component.questionNo}
-									data-type={component.inputType}
-									data-place={component.placeholder}
-									data-question={component.question}
-									>Edit Component</button>
-									</div>
-							</div>
-							
-						);
-						break;
-					
-					case "email":
-						console.log("Inserting2");
-						components.push(
-							<div class="card text-white bg-secondary mb-3 col=lg-10">
+							<div class="card text-white bg-secondary mb-3 col-lg-8 offset-lg-2">
 								<div class="card-header">{"Question No "+ component.questionNo}</div>
 								  <div class="card-body">
 									<form>
@@ -201,14 +178,46 @@ class FormBuilder extends React.Component{
 										<label for="question">Question</label>
 										<input type="text" class="form-control col-lg-6" id="question" value={component.question}/>
 									  </div>
+									  <button type="button" class="btn btn-outline-dark col-lg-2" onClick={this.editToggle} name="edit"
+										data-no={component.questionNo}
+										data-type={component.inputType}
+										data-place={component.placeholder}
+										data-question={component.question}
+										>Edit Component</button>
 									 </form>
-									<button type="button" class="btn btn-outline-dark col-lg-2 offset-lg-1" onClick={this.editToggle} name="edit"
-									data-no ={component.questionNo}
-									data-type={component.inputType}
-									data-placeholder={component.placeholder}
-									data-question={component.question}>
-									Edit Component</button>
 									</div>
+							</div>
+							
+						);
+						break;
+					
+					case "email":
+						console.log("Inserting2");
+						components.push(
+							<div class="card text-white bg-secondary mb-3 col-lg-8 offset-lg-2">
+								<div class="card-header">{"Question No "+ component.questionNo}</div>
+								  <div class="card-body">
+									<form>
+									  <div class="form-group">
+										<label for="inputType">Input Type</label>
+										<input type="text" className="form-control col-lg-6" id="inputType" value={component.inputType}/>
+									  </div>
+									  <div class="form-group">
+										<label for="placeholder">Placeholder</label>
+										<input type="text" class="form-control col-lg-6" id="placeholder" value={component.placeholder}/>
+									  </div>
+									  <div class="form-group">
+										<label for="question">Question</label>
+										<input type="text" class="form-control col-lg-6" id="question" value={component.question}/>
+									  </div>
+									  <button type="button" class="btn btn-outline-dark col-lg-2" onClick={this.editToggle} name="edit"
+										data-no ={component.questionNo}
+										data-type={component.inputType}
+										data-placeholder={component.placeholder}
+										data-question={component.question}>
+										Edit Component</button>
+									 </form>
+								</div>
 							</div>						
 						);
 						break;
@@ -217,7 +226,7 @@ class FormBuilder extends React.Component{
 					case "checkBox":
 						console.log("Inserting2");
 						components.push(
-							<div class="card text-white bg-secondary mb-3 col=lg-10">
+							<div class="card text-white bg-secondary mb-3 col-lg-8 offset-lg-2">
 								<div class="card-header">{"Question No "+ component.questionNo}</div>
 								  <div class="card-body">
 									<form>
@@ -241,16 +250,19 @@ class FormBuilder extends React.Component{
 										<label for="option3">Option 3</label>
 										<input type="text" class="form-control col-lg-6" id="option3" value={component.option3}/>
 									  </div>
+									  <button type="button" class="btn btn-outline-dark col-lg-2 offset-lg-1" onClick={this.editToggle} name="edit"
+										data-no ={component.questionNo}
+										data-type={component.inputType}
+										data-question={component.question}
+										data-option1={component.option1}
+										data-option2={component.option2}
+										data-option3={component.option3}
+										>Edit Component</button>
 									 </form>
-									<button type="button" class="btn btn-outline-dark col-lg-2 offset-lg-1" onClick={this.editToggle} name="edit"
-									data-no ={component.questionNo}
-									data-type={component.inputType}
-									data-question={component.question}
-									data-option1={component.option1}
-									data-option2={component.option2}
-									data-option3={component.option3}
-									>Edit Component</button>
 									</div>
+									<br/>
+									<br/>
+									<br/>
 							</div>						
 						);
 						break;
@@ -263,28 +275,27 @@ class FormBuilder extends React.Component{
 	}
 	
 	render(){
-		console.log(this.state.formDetails);
-		//this.populateComponents()
 		
 		return(
-		<div>
+		<div className="container2">
 			<AddModal toggle={this.toggle} modal={this.state.modal} currentForm={this.props.formName} counter={this.setQuestionCount} count={this.state.count} getFormData={this.getFormData} setAddState={this.setAddState}/>
 			<EditModal toggle={this.editToggle} modal={this.state.editModal} selectedComponent={this.state.editState} getFormData={this.getFormData} currentForm={this.props.formName} getCurrentComponentDetails={this.getCurrentComponentDetails}/>
-			<table>
+			<table align="center">
 				<tr>
-					<td>
-						<p>Form Name : {this.props.formName}</p>
+					<td align="center">
+						<h4 className="fontWhite">Form Name : {this.props.formName}</h4>
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<td align="center">
 						<div>
 								<button type="button" class="btn btn-outline-secondary" onClick={this.toggle}>Add Component</button>
-								<br/>
+								
 						</div>
 					</td>
 				</tr>
 			</table>
+			<br/>
 			{this.populateComponents()}
 		</div>);
 	}

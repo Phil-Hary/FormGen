@@ -33,7 +33,7 @@ area1{
 
 .container1{
   background-color:#333;
-   height:100vh;
+   height:100%;
    overflow:auto;
 }
 
@@ -189,4 +189,14 @@ body {
 .home{
 	margin-left:60px;
 	margin-right:50px;
+}
+
+.fontWhite{
+	color:white;
+}
+
+.container2{
+	background-color:#333;
+	height:100%;
+	overflow:auto;
 }

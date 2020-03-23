@@ -2,6 +2,15 @@ import React from 'react';
 import axios from 'axios';
 import Form from './form.js';
 
+/*
+DESCRIPTION
+
+component: RenderForm
+
+Desc:
+	Responsible for generating the form for user
+
+*/
 
 class RenderForm extends React.Component {
 

@@ -1,11 +1,17 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-const Home = (props) => {
-	
-	console.log("here");
+/*
+DESCRIPTION
 
-		console.log(props.formName);
+component: Home
+
+Desc:
+	This display the Admin hompage
+
+*/
+
+const Home = (props) => {
 		
 		return (
 			<div className='container1'> 

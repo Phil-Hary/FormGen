@@ -2,9 +2,19 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import axios from 'axios';
 
+/*
+DESCRIPTION
+
+component: AddModal
+
+Desc:
+	This is a modal which is used to add new fields to the form
+
+*/
+
 class AddModal extends React.Component{
 	constructor(props){
-		console.log("Here");
+		
 		super(props);
 		this.count = props.count;
 		this.state = {
@@ -28,6 +38,7 @@ class AddModal extends React.Component{
 		})
 	}
 	
+	//Validates the user inputs
 	validate =(e) =>{
 		e.preventDefault();
 		console.log("Here "+this.state.currentComponent);
@@ -104,6 +115,7 @@ class AddModal extends React.Component{
 		}
 	}
 	
+	//Set Values captured from form
 	seValues=(e)=>{
 		switch(e.target.name){
 			case "placeholder":
@@ -144,6 +156,7 @@ class AddModal extends React.Component{
 		}
 	}
 	
+	//Displays the content in modal based on the selected type
 	DisplayComponent(){
 		switch(this.state.currentComponent){
 								  case "text":
@@ -159,7 +172,7 @@ class AddModal extends React.Component{
 												<input type="text" className="form-control col-lg-6" name="inputType" value="text"/>
 											  </div>
 											  <div class="form-group">
-												<label for="placeholder">Plaeholder</label>
+												<label for="placeholder">Placeholder</label>
 												<input type="text" class="form-control col-lg-6" name="placeholder" value={this.state.placeholder} onChange={this.seValues}/>
 											  </div>
 											  <div class="form-group">
@@ -183,7 +196,7 @@ class AddModal extends React.Component{
 												<input type="text" className="form-control col-lg-6" name="inputType" value="textArea"/>
 											  </div>
 											  <div class="form-group">
-												<label for="placeholder">Plaeholder</label>
+												<label for="placeholder">Placeholder</label>
 												<input type="text" class="form-control col-lg-6" name="placeholder"value={this.state.placeholder} onChange={this.seValues}/>
 											  </div>
 											  <div class="form-group">

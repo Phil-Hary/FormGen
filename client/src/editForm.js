@@ -4,6 +4,17 @@ import EditNameModal from './editNameModal';
 import FormBuilder from './formBuilder';
 import axios from 'axios';
 
+/*
+DESCRIPTION
+
+component: EditForm
+
+Desc:
+	This component is called to edit a form.
+	Based on the formName calls editNameModal or FormBuilder
+
+*/
+
 class EditForm extends React.Component{
 	
 	constructor(){
@@ -22,6 +33,7 @@ class EditForm extends React.Component{
 		return true;
 	}
 	
+	//Sets Form name
 	setFormName = (e) => {
 		console.log(e.target.value);
 		this.setState({
@@ -29,6 +41,7 @@ class EditForm extends React.Component{
 		})
 	}
 	
+	//Process cancel button
 	cancelProcess = () => {
 		this.setState({
 			modal:false,
@@ -36,6 +49,7 @@ class EditForm extends React.Component{
 			});
 	}
 	
+	//Process submit button
 	submitProcess = () => {
 		console.log(this.state.formName);
 		this.setState({
@@ -43,6 +57,7 @@ class EditForm extends React.Component{
 			});
 	}
 	
+	//Function to toggle editNameModal
 	toggle = (e) => {
 		console.log("Hello");
 		console.log(e.target.name);

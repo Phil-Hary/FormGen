@@ -3,7 +3,6 @@ const assert = require('assert');
 const url = 'mongodb+srv://phil:1234@messenger-vjyku.mongodb.net/test?retryWrites=true&w=majority';
 
 const dbName = 'Tesark';
-
 MongoClient.connect(url,{ useUnifiedTopology: true },(err,client)=>{
 	assert.equal(null,err);
 	console.log("Connected Successfully");

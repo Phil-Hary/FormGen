@@ -4,6 +4,17 @@ import FormNameModal from './formNameModal';
 import FormBuilder from './formBuilder';
 import axios from 'axios';
 
+/*
+DESCRIPTION
+
+component: CreateNewForm
+
+Desc:
+	This is copomonets checks if a form name is selected and based on that calls formNameModal or 
+	FormBuilder
+
+*/
+
 class CreateNewForm extends React.Component{
 	
 	constructor(){
@@ -21,20 +32,23 @@ class CreateNewForm extends React.Component{
 		return true;
 	}
 	
+	//Sets form name
 	setFormName = (e) => {
-		console.log(e.target.value);
+		
 		this.setState({
 			formName:e.target.value
 		})
 	}
 	
+	//Sets Form Desc
 	setDesc = (e) => {
-		console.log(e.target.value);
+
 		this.setState({
 			desc:e.target.value
 		})
 	}
 	
+	//Process cancel button
 	cancelProcess = () => {
 		this.setState({
 			modal:false,
@@ -42,15 +56,16 @@ class CreateNewForm extends React.Component{
 			});
 	}
 	
+	//Process submit button
 	submitProcess = () => {
 		this.setState({
 			modal:false
 			});
 	}
 	
+	//Function to toggle formNameModal
 	toggle = (e) => {
-		console.log("Hello");
-		console.log(e.target.name);
+
 		if(this.state.modal === false)
 		{
 			this.setState({

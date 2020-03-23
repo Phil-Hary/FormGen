@@ -1,6 +1,16 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
+/*
+DESCRIPTION
+
+component: Layout
+
+Desc:
+	Generates the link for a given form
+
+*/
+
 const LinkGenModal = (props) => {
 	
 	const url = "http://localhost:3000/user/"+props.formName;

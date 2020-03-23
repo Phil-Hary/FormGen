@@ -2,9 +2,17 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import IndividualResponse from './IndividualResponse';
 
+/*
+DESCRIPTION
+
+component: FormNameModal
+
+Desc:
+	This modal is used to get the formName and description
+
+*/
+
 const FormNameModal = (props) => {
-	
-	console.log("here");
 	
 
   return (

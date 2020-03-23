@@ -2,6 +2,16 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import axios from 'axios';
 
+/*
+DESCRIPTION
+
+component: EditNameModal
+
+Desc:
+	Modal to capture details to edit a form component
+
+*/
+
 class EditNameModal extends React.Component {
 	
 	constructor(props){

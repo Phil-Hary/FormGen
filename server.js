@@ -10,6 +10,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 
+//Server for FormGen
 if(process.env.NODE_ENV === "production"){
 	//Set static folder
 	app.use(express.static('client/build'));

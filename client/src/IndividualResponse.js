@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import { Collapse, CardBody, Card, CardHeader, Row } from 'reactstrap';
 
+/*
+DESCRIPTION
+
+component: IndividualResponse
+
+Desc:
+	This builds and displays the reponse of the user
+
+*/
+
 class IndividualResponse extends React.Component {
 
 	constructor(props) {

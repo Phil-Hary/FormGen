@@ -1,6 +1,16 @@
 import React from 'react';
 import LayOut from './layout';
 
+/*
+DESCRIPTION
+
+component: Login
+
+Desc:
+	Displays the login page
+
+*/
+
 class Login extends React.Component{
 
 constructor(){

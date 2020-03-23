@@ -2,6 +2,16 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import axios from 'axios';
 
+/*
+DESCRIPTION
+
+component: EditComponentModal
+
+Desc:
+	This is modal is used to edit the details of a form component
+
+*/
+
 class EditComponentModal extends React.Component{
 	
 	
@@ -20,22 +30,22 @@ class EditComponentModal extends React.Component{
 		}
 	}
 	
-	
+	//Sets the component to be edited
 	setComponent=(e)=>{
-		console.log(e.target.value);
+
 		this.setState({
 			currentComponent:e.target.value,
 			inputType:e.target.value
 		})
 	}
 	
+	//Validates the data to be edited
 	validate =(e) =>{
 		e.preventDefault();
-		console.log("Here "+this.state.currentComponent);
-		console.log(this.state);
+		
 		if(this.state.currentComponent == "text" || this.state.currentComponent == "textArea"){
 			if(this.state.inputType!="" && this.state.placeholder!=""){
-				console.log("Valid");
+
 				axios
 				.post('/admin/updateForm', {
 					inputType:this.state.inputType,
@@ -77,7 +87,7 @@ class EditComponentModal extends React.Component{
 		
 		else{
 			if(this.state.inputType!="" && this.state.question !="" && this.state.option1!="" && this.state.option2!="" && this.state.option3!=""){
-				console.log("Valid");
+
 				axios
 				.post('/admin/updateForm', {
 					inputType:this.state.inputType,
@@ -118,6 +128,7 @@ class EditComponentModal extends React.Component{
 		}
 	}
 	
+	//Set values entered in the modal
 	setValues=(e)=>{
 		switch(e.target.name){
 			case "placeholder":
@@ -158,6 +169,7 @@ class EditComponentModal extends React.Component{
 		}
 	}
 	
+	//Display the respective componenet based on the types
 	DisplayComponent(){
 		switch(this.props.selectedComponent.type){
 								  case "text":
@@ -275,8 +287,7 @@ class EditComponentModal extends React.Component{
 	}
 	
 	render(){
-		console.log("Here"+this.props.modal);
-		console.log(this.state);
+
 		return(
 			<Modal isOpen={this.props.modal} toggle={this.props.toggle} className="modal-lg" contentClassName="modal-custom-style">
 				<ModalHeader toggle={this.props.toggle}>{this.props.currentForm}</ModalHeader>

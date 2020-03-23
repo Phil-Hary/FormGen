@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const api = require('../middlewares');
 
+//Router
 router.get('/dashboard',(req,res)=>{
 	api.formDetails()
 		.then((data)=>{
@@ -13,8 +14,7 @@ router.get('/dashboard',(req,res)=>{
 });
 
 router.post('/createNewForm',(req,res)=>{
-	console.log(req.body.formName);
-	console.log(req.body.formDesc);
+
 	api.createForm(req.body.formName, req.body.formDesc)
 		.then((data)=>{
 			res.send(data);
@@ -25,7 +25,7 @@ router.post('/createNewForm',(req,res)=>{
 });
 
 router.post('/getSpecificForm',(req,res)=>{
-	console.log(req.body.formName);
+
 	api.getSpecificForm(req.body.formName)
 		.then((data)=>{
 			console.log(data);

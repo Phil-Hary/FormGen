@@ -1,6 +1,7 @@
 const config = require('./connection');
 const db = config.db;
 
+//Gets form Details from Db
 const getFormDetails = () => {
 	const db = config.db;
 	const collection = db.collection('forms');
@@ -18,6 +19,8 @@ const getFormDetails = () => {
 	});
 }
 
+
+//Inserts new From data into Db
 const createNewForm = (formName,formDesc) => {
 	const db = config.db;
 	const collection = db.collection('forms');
@@ -57,6 +60,7 @@ const createNewForm = (formName,formDesc) => {
 		});
 }
 
+//gets a particular form data
 const getSpecificForm = (formName) => {
 	const db = config.db;
 	const collection = db.collection('forms');
@@ -76,6 +80,7 @@ const getSpecificForm = (formName) => {
 	});
 }
 
+//updates the form data
 const updateForm = ((formName, inputType, placeholder, question, option1, option2, option3, questionNo) => {
 	const db = config.db;
 	const collection = db.collection('forms');
@@ -108,6 +113,7 @@ const updateForm = ((formName, inputType, placeholder, question, option1, option
 	});
 })
 
+//gets form names
 const getFormName = () => {
 	const db = config.db;
 	const collection = db.collection('forms');

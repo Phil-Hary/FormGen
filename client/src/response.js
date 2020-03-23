@@ -1,5 +1,15 @@
 import React from 'react';
 
+/*
+DESCRIPTION
+
+component: Responses
+
+Desc:
+	This component displays the responses captured for the given form
+
+*/
+
 class Responses extends React.Component{
 	
 	constructor(props){
