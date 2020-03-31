@@ -184,3 +184,132 @@ db.forms.aggregate([
 				   
 {(this.state.modal === true)?(<ViewModal toggle={this.toggle} modal={this.state.modal} formDetails={this.state.formData} currentForm={this.state.currentForm}/>):(<ViewModal toggle={this.toggle} modal={this.state.modal} formDetails={this.state.formData} currentForm={this.state.currentForm}/>)}
 						  				   
+										   
+										   
+db.forms.insert( 
+	{ 
+		formName: "Student Registration",
+		desc:"Form to capture student details",
+		type:"form", 
+		formData:[{
+			questionNo:1,
+			question:"Roll no",
+			inputType:"text",
+			placeholder:"Enter Roll no"
+		},
+		{
+			questionNo:2,
+			question:"Standard",
+			inputType:"text",
+			placeholder:"Enter standard"
+		},
+		{
+			questionNo:3,
+			question:"Mobile No",
+			inputType:"text",
+			placeholder:"Enter Mobile no"
+		},
+		{
+			questionNo:4,
+			question:"Where are you coming from?",
+			inputType:"text",
+			placeholder:"Enter city name"
+		}], 
+		resCount:3, 
+		responses:[
+		{
+			userName:"Mark",
+			emailId:"mk@gmail.com",
+			answers:[
+			{
+				questionNo:1,
+				question:"Roll no",
+				answer:"0001"
+			},
+			{
+				questionNo:2,
+				question:"Standard",
+				answer:"Tenth"
+			},
+			{
+				questionNo:3,
+				question:"Mobile No",
+				answer:"1234567890"
+			},
+			{
+				questionNo:4,
+				question:"Where are you coming from?",
+				answer:"Royapuram"
+			}]
+		},
+		{
+			userName:"Ansari",
+			emailId:"ans@gmail.com",
+			answers:[
+			{
+				questionNo:1,
+				question:"Roll no",
+				answer:"0002"
+			},
+			{
+				questionNo:2,
+				question:"Standard",
+				answer:"Eleventh"
+			},
+			{
+				questionNo:3,
+				question:"Mobile No",
+				answer:"0987654321"
+			},
+			{
+				questionNo:4,
+				question:"Where are you coming from?",
+				answer:"George Town"
+			}]
+		},
+		{
+			userName:"Dan",
+			emailId:"jd@gmail.com",
+			answers:[
+			{
+				questionNo:1,
+				question:"Roll no",
+				answer:"0003"
+			},
+			{
+				questionNo:2,
+				question:"Standard",
+				answer:"Tenth"
+			},
+			{
+				questionNo:3,
+				question:"Mobile No",
+				answer:"1234567890"
+			},
+			{
+				questionNo:4,
+				question:"Where are you coming from?",
+				answer:"Adayar"
+			}]
+		}] 
+	})
+	
+	db.forms.insert( 
+	{ 
+		formName: "Survey2", 
+		type:"form", 
+		formData:[{
+			questionNo:1,
+			question:"Enter Name",
+			inputType:"text",
+			placeholder:"Enter Name"
+		},
+		{
+			questionNo:2,
+			question:"Enter emailId",
+			inputType:"email",
+			placeholder:"Enter Email",
+			emailId:"Enter EmailId"
+		}], 
+		resCount:0, 
+		responses:[] } )
